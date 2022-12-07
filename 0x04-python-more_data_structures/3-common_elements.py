@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 3-common_elements.py
 
-def common_elements(first_set, second_set)):
+def common_elements(set_1, set_2):
     """Return a set of common elements in two sets."""
-    return (first_set & second_set)
+    return (set_1, set_2)
