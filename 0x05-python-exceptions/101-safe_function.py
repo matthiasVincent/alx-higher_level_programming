@@ -2,6 +2,7 @@
 # 101-safe_function.py
 import sys
 
+
 def safe_function(fct, *args):
     """Executes a function safely.
 
