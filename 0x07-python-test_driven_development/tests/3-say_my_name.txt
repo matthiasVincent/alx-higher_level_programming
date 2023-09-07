@@ -29,7 +29,7 @@ an empty string is printed instead.
 ::
 
     >>> say_my_name("Matthias")
-    My name is Matthias
+    My name is Matthias 
 
 Invalid Names
 =============
