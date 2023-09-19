@@ -78,10 +78,10 @@ class Base:
         """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
-                new = cls(1, 1)
+                new = cls(3, 3)
             else:
-                new = cls(1)
-            new = new.update(**dictionary)
+                new = cls(2)
+            new.update(**dictionary)
             return new
 
     @classmethod
