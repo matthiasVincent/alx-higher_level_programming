@@ -20,13 +20,10 @@ def main():
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=db_user, passwd=db_password, db=db_name)
     cursor = db.cursor()
-    # Use all the SQL you like
-    fl_state_name = MySQLdb.escape_string(state_name).decode()
-    sqlquery = ("""SELECT cities.name FROM cities JOIN states ON
-                states.id = cities.state_id
-                WHERE states.name
-                = '{}' ORDER BY cities.id""".format(fl_state_name))
-    cursor.execute(sqlquery)
+    sqlquery = "SELECT cities.name FROM cities JOIN states ON\
+            states.id = cities.state_id\
+            WHERE states.name = %s ORDER BY cities.id"
+    cursor.execute(sqlquery, (state_name,))
     data = cursor.fetchall()
 
     for i in range(len(data)):

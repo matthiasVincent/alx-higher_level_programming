@@ -20,10 +20,10 @@ def main():
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=db_user, passwd=db_password, db=db_name)
     cursor = db.cursor()
-    c = cursor.execute("SELECT * FROM `states`")
-    [
-            print(state) for state in c.fetchall()
-            if state[1] == sys.argv[4]]
+    c = "SELECT * FROM states WHERE name = %s"
+    cursor.execute(c, (state_name,))
+    for d in cursor.fetchall():
+        print(d)
     db.close()
 
 
