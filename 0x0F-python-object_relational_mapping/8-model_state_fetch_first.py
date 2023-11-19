@@ -31,5 +31,6 @@ def main():
         print("Nothing")
     session.close()
 
+
 if __name__ == '__main__':
     main()

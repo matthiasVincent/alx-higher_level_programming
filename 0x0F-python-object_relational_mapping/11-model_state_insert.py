@@ -30,5 +30,6 @@ def main():
     print(new_obj.id)
     session.close()
 
+
 if __name__ == '__main__':
     main()

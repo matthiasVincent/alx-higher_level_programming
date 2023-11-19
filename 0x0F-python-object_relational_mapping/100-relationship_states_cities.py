@@ -31,5 +31,6 @@ def main():
     session.commit()
     session.close()
 
+
 if __name__ == '__main__':
     main()

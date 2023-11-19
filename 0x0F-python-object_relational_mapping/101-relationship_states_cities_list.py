@@ -32,5 +32,6 @@ def main():
             print("    {}: {}".format(city.id, city.name))
     session.close()
 
+
 if __name__ == '__main__':
     main()

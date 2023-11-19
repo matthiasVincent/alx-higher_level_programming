@@ -28,5 +28,6 @@ def main():
         print("{}: {}".format(state.id, state.name))
         session.close()
 
+
 if __name__ == '__main__':
     main()
