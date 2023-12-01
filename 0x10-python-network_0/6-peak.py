@@ -12,12 +12,19 @@ def find_peak(list_of_integers):
         return list_of_integers[0]
     elif size == 2:
         return max(list_of_integers)
-
-    mid = int(size / 2)
-    peak = list_of_integers[mid]
-    if peak > list_of_integers[mid - 1] and peak > list_of_integers[mid + 1]:
-        return peak
-    elif peak < list_of_integers[mid - 1]:
-        return find_peak(list_of_integers[:mid])
-    else:
-        return find_peak(list_of_integers[mid + 1:])
+    left = 0
+    r = size - 1
+    m = int((left + r) / 2)
+    while left <= r:
+        p = list_of_integers[m]
+        if (
+                (m == 0 or peak >= list_of_integers[m - 1]) and
+                (m == r or p >= list_of_integers[m + 1])):
+            break
+        elif p < list_of_integers[m - 1]:
+            r = m - 1
+            m = int((left + r) / 2)
+        else:
+            left = m + 1
+            m = int((left + r) / 2)
+    return p
