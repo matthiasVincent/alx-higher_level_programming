@@ -18,8 +18,8 @@ def find_peak(list_of_integers):
     while left <= r:
         p = list_of_integers[m]
         if (
-                (m == 0 or peak >= list_of_integers[m - 1]) and
-                (m == r or p >= list_of_integers[m + 1])):
+                (m == 0 or peak > list_of_integers[m - 1]) and
+                (m == r or p > list_of_integers[m + 1])):
             break
         elif p < list_of_integers[m - 1]:
             r = m - 1
